@@ -1,0 +1,96 @@
+@startuml
+class model.TaskDAOImpl {
+- Connection conn
++ List<Task> getAllTasks()
++ Task getTaskById(int)
++ void addTask(Task)
++ void updateTask(Task)
++ void deleteTask(int)
++ void drop()
+}
+interface model.TaskDAO {
+~ List<Task> getAllTasks()
+~ Task getTaskById(int)
+~ void addTask(Task)
+~ void updateTask(Task)
+~ void deleteTask(int)
+~ void drop()
+}
+class com.example.task8_dao.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+class model.TaskDAOPos {
+- Connection conn
++ List<Task> getAllTasks()
++ Task getTaskById(int)
++ void addTask(Task)
++ void updateTask(Task)
++ void deleteTask(int)
++ void drop()
+}
+class model.TaskFabrica {
++ {static} String H2
++ {static} String POS
+- TaskDAO fabDao
++ TaskDAO getFabDao(String)
+}
+class model.ListTask {
+- List<Task> tasks
+- String randomTime(Random)
++ List<Task> getTasks()
++ List<Task> getAllTasks()
++ Task getTaskById(int)
++ void addTask(Task)
++ void updateTask(Task)
++ void deleteTask(int)
++ void drop()
+}
+class com.example.task8_dao.HelloController {
++ TextField name
++ TextField time
++ TextField status
++ Button drop
++ TextField selectDao
++ ChoiceBox selectDAObox
+~ TaskDAOImpl impl
+~ TaskDAOPos impl2
+~ TaskFabrica taskFabrica
+~ TaskDAO taskDAO
++ TableView table
+- ListTask tasks
+- ObservableList<Task> fxlist
+- ObservableList list
+- void addChoiceBox()
+- void createtable()
+# void onHelloButtonClick()
+# void output()
+# void drop()
++ void initialize(URL,ResourceBundle)
+}
+class model.Task {
+- SimpleIntegerProperty id
+- SimpleStringProperty name
+- SimpleStringProperty time
+- SimpleStringProperty status
++ int getId()
++ SimpleIntegerProperty idProperty()
++ String getName()
++ SimpleStringProperty nameProperty()
++ String getTime()
++ SimpleStringProperty timeProperty()
++ String getStatus()
++ SimpleStringProperty statusProperty()
++ void setId(int)
++ void setName(String)
++ void setTime(String)
++ void setStatus(String)
+}
+
+
+model.TaskDAO <|.. model.TaskDAOImpl
+javafx.application.Application <|-- com.example.task8_dao.HelloApplication
+model.TaskDAO <|.. model.TaskDAOPos
+model.TaskDAO <|.. model.ListTask
+javafx.fxml.Initializable <|.. com.example.task8_dao.HelloController
+@enduml
