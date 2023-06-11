@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<VBox alignment="CENTER" prefHeight="829.0" prefWidth="1563.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.html_editor.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <HBox prefHeight="803.0" prefWidth="1193.0">
+         <children>
+            <VBox prefHeight="729.0" prefWidth="670.0">
+               <children>
+                  <Label text="Задайте URL редактируемой страницы">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="225.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="urlField">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="HTML-код">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="305.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="textarea" prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Label text="Инструменты для редактирования">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="240.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HTMLEditor fx:id="htmleditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="418.0" prefWidth="721.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HTMLEditor>
+                  <HBox prefHeight="28.0" prefWidth="810.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onOpen" text="Открыть HTML">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#loadURL" text="Открыть URL">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onChange" text="Применить изменения">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onSave" text="Сохранить изменения" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <WebView fx:id="webview" prefHeight="789.0" prefWidth="843.0" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

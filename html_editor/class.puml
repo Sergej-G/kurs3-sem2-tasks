@@ -1,0 +1,22 @@
+@startuml
+class com.example.html_editor.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+class com.example.html_editor.HelloController {
++ WebView webview
++ HTMLEditor htmleditor
++ TextArea textarea
++ TextField urlField
++ void onOpen(ActionEvent)
+- void load(File)
++ void onSave(ActionEvent)
+- void saveToFile(String,File)
++ void loadURL(ActionEvent)
+- boolean isValidUrl(String)
++ void onChange(ActionEvent)
+}
+
+
+javafx.application.Application <|-- com.example.html_editor.HelloApplication
+@enduml
