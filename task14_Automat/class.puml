@@ -1,0 +1,54 @@
+@startuml
+class com.example.task14_automat.HelloController {
++ Label systemLabel
++ ImageView Chest1
+- SlotMachine slotMachine
+- Player player1
++ void OnBtnStart(ActionEvent)
++ void OnBtnEnd(ActionEvent)
++ void OnMouseClickImg(MouseEvent)
++ void addMoney(ActionEvent)
+- void UpdatingPointsOnScreen()
++ void initialize(URL,ResourceBundle)
+}
+class com.example.task14_automat.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+class model.gameHandlers.NegativeHandler {
++ void handle(int,Player,SlotMachine)
+}
+class model.SlotMachine {
+- int coins
+- Handler handler
++ int getCoins()
++ void addCoins(int)
++ void removeCoins(int)
++ int play(Player)
+- int spin()
+}
+class model.gameHandlers.VOIDHandler {
++ void handle(int,Player,SlotMachine)
+}
+class model.Player {
+- int coins
++ int getCoins()
++ void addCoins(int)
++ void removeCoins(int)
+}
+class model.gameHandlers.PositiveHandler {
++ void handle(int,Player,SlotMachine)
+}
+abstract class model.gameHandlers.Handler {
+- Handler processor
++ {abstract}void handle(int,Player,SlotMachine)
++ Handler getProcessor()
+}
+
+
+javafx.fxml.Initializable <|.. com.example.task14_automat.HelloController
+javafx.application.Application <|-- com.example.task14_automat.HelloApplication
+model.gameHandlers.Handler <|-- model.gameHandlers.NegativeHandler
+model.gameHandlers.Handler <|-- model.gameHandlers.VOIDHandler
+model.gameHandlers.Handler <|-- model.gameHandlers.PositiveHandler
+@enduml

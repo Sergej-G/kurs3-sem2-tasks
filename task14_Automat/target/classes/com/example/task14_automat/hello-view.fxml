@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="490.0" prefWidth="636.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task14_automat.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <Label fx:id="systemLabel" text="systemLabel">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <HBox fx:id="Chest" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="Chest1" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#OnMouseClickImg" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></ImageView>
+            <ImageView fx:id="Chest2" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#OnMouseClickImg" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></ImageView>
+            <ImageView fx:id="Chest3" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#OnMouseClickImg" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="100.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="coin" layoutX="27.0" layoutY="14.0" text="Монеты игрока">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label layoutX="455.0" layoutY="14.0" text="Монеты автомата">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="playerMoney" layoutX="79.0" layoutY="50.0" text="0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="machineMoney" layoutX="516.0" layoutY="50.0" text="0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="statusLabel" layoutX="242.0" layoutY="37.0" text="statusLabel" visible="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="100.0" prefWidth="601.0">
+               <children>
+                  <Button layoutX="462.0" mnemonicParsing="false" onAction="#OnBtnEnd" text="Завершить игру!">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="34.0" mnemonicParsing="false" onAction="#OnBtnStart" text="Начать игру!">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="23.0" layoutY="50.0" mnemonicParsing="false" onAction="#addMoney" text="Добавить монет">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+
+    
+</VBox>
