@@ -1,0 +1,71 @@
+@startuml
+class com.example.task11.HelloController {
++ ScrollPane viewpane
++ ChoiceBox choiceBox
+- HashMap<String,Colleague> id
+- Colleague currentcolleague
+- Test test
+- ObservableList list
+- void box()
++ void execute(ActionEvent)
++ void initialize(URL,ResourceBundle)
++ void setView(Node)
+}
+class model.Qweston {
+- StringProperty question
+- ArrayList<StringProperty> answergood
+- ArrayList<StringProperty> badanswer
++ int addTrue(String)
++ int addFalse(String)
++ void SetQuest(String)
++ ArrayList<StringProperty> getAnswergood()
++ void setAnswergood(ArrayList<StringProperty>)
++ ArrayList<StringProperty> getBadanswer()
++ void setBadanswer(ArrayList<StringProperty>)
++ String getQuestion()
++ StringProperty questionProperty()
+}
+class model.Editor {
++ void notifyColleague(ArrayList<Qweston>)
+}
+abstract class model.Colleague {
+# Mediator mediator
+# ArrayList<Qweston> receivedMessage
++ {abstract}void notifyColleague(ArrayList<Qweston>)
++ void receive(ArrayList<Qweston>)
++ ArrayList<Qweston> getReceivedMessage()
+}
+class model.Viewer {
+~ int NUMBER
++ void notifyColleague(ArrayList<Qweston>)
++ void receive(ArrayList<Qweston>)
+}
+class com.example.task11.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+interface model.Mediator {
+~ void setView(Node)
+}
+class model.Test {
+- ArrayList<Qweston> test
++ ArrayList<Qweston> createtest(int)
++ ArrayList<Qweston> getTest()
++ void setTest(ArrayList<Qweston>)
+- void load(String)
+}
+class model.Worker {
+- int NUMBER
++ void setTest(int)
++ void notifyColleague(ArrayList<Qweston>)
++ void receive(ArrayList<Qweston>)
+}
+
+
+javafx.fxml.Initializable <|.. com.example.task11.HelloController
+com.example.task11.Mediator <|.. com.example.task11.HelloController
+model.Colleague <|-- model.Editor
+model.Colleague <|-- model.Viewer
+javafx.application.Application <|-- com.example.task11.HelloApplication
+model.Colleague <|-- model.Worker
+@enduml

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="433.0" prefWidth="544.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task11.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <AnchorPane prefHeight="403.0" prefWidth="504.0">
+         <children>
+            <ChoiceBox fx:id="choiceBox" layoutX="4.0" layoutY="2.0" prefWidth="150.0" />
+            <Button layoutX="166.0" layoutY="2.0" mnemonicParsing="false" onAction="#execute" text="Выполнить" />
+            <ScrollPane fx:id="viewpane" layoutX="4.0" layoutY="52.0" prefHeight="327.0" prefWidth="496.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="494.0" />
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+    
+</VBox>
