@@ -14,7 +14,7 @@ NegativeHandler - проигрышные результаты, а VOIDHandler - 
 
 Скриншот окна во время начала игры
 ---
-![](img/gameWln.PNG)
+![](img/gameWIn.PNG)
 
 Скриншот окна в момент выигрыша 
 ---
